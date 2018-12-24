@@ -43,4 +43,8 @@ public class ScanPresenter {
     public void startedScan() {
         output.println("Hello, scan is started! Write result after scan...");
     }
+
+    public void failedArgs() {
+        output.println("No specified all arguments. Required is [address] [start port] [end port]");
+    }
 }

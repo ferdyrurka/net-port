@@ -19,6 +19,10 @@ public class netPort {
         Output output = new Output(System.out);
         ScanPresenter scanPresenter = new ScanPresenter(output);
 
+        if (args.length != 3) {
+            scanPresenter.failedArgs();
+        }
+
         scanPresenter.startedScan();
 
         ScannerServiceFactory scannerServiceFactory = new ScannerServiceFactory(

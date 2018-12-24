@@ -57,4 +57,14 @@ public class ScanPresenterTest {
 
         Mockito.verify(this.output, Mockito.times(1)).println("Hello, scan is started! Write result after scan...");
     }
+
+    public void testFailedArgs() {
+        Mockito.doNothing().when(this.output).println(Mockito.isA(String.class));
+
+        this.scanPresenter.failedArgs();
+
+        Mockito.verify(this.output, Mockito.times(1)).println(
+                "No specified all arguments. Required is [address] [start port] [end port]"
+        );
+    }
 }
