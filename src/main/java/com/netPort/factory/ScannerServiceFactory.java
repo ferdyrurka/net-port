@@ -41,6 +41,11 @@ public class ScannerServiceFactory {
         return new ScannerService(this.startPort, this.endPort);
     }
 
+    /**
+     * Gets socket service.
+     *
+     * @return the socket service
+     */
     public SocketService getSocketService() {
         return new SocketService(this.address);
     }

@@ -10,6 +10,9 @@ import java.util.LinkedList;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * The type Scanner service test.
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class ScannerServiceTest {
 
@@ -17,6 +20,9 @@ public class ScannerServiceTest {
     private SocketService socketService;
 
 
+    /**
+     * Test scan.
+     */
     @Test
     public void testScan() {
         Mockito.when(socketService.scan(Mockito.isA(Integer.class))).thenReturn(true, false);

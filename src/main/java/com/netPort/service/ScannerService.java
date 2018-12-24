@@ -26,6 +26,9 @@ public class ScannerService {
 
     /**
      * Scan.
+     *
+     * @param socketService the socket service
+     * @return the linked list
      */
     public LinkedList<String> scan(SocketService socketService) {
         for (int currentPort = this.startPort; currentPort <= this.endPort; currentPort++) {
