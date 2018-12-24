@@ -17,9 +17,9 @@ public class SocketServiceTest {
         try {
             new Socket("192.168.1.1", 80);
 
-            Assert.assertFalse(scanResult);
-        }catch (IOException e) {
             Assert.assertTrue(scanResult);
+        }catch (IOException e) {
+            Assert.assertFalse(scanResult);
         }
     }
 }
