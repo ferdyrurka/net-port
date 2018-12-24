@@ -47,6 +47,6 @@ public class ScannerFactoryTest {
     @Test
     public void testGetSocketService() throws FailedValidateException {
         ScannerServiceFactory scannerServiceFactory = new ScannerServiceFactory("192.168.1.1", 10, 20);
-        assertEquals(SocketService.class, scannerServiceFactory.getSockerService().getClass());
+        assertEquals(SocketService.class, scannerServiceFactory.getSocketService().getClass());
     }
 }

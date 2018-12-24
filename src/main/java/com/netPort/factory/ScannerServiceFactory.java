@@ -3,7 +3,7 @@ package com.netPort.factory;
 import com.netPort.service.ScannerService;
 import com.netPort.exception.FailedValidateException;
 import com.netPort.service.SocketService;
-import com.netPort.validator.DomainValidator;
+import com.netPort.validator.AddressValidator;
 
 /**
  * The type Port scanner factory.
@@ -41,14 +41,14 @@ public class ScannerServiceFactory {
         return new ScannerService(this.startPort, this.endPort);
     }
 
-    public SocketService getSockerService() {
+    public SocketService getSocketService() {
         return new SocketService(this.address);
     }
 
     private void validateData() throws FailedValidateException {
-        DomainValidator domainValidator = new DomainValidator();
+        AddressValidator addressValidator = new AddressValidator();
 
-        if (!domainValidator.validate(this.address)) {
+        if (!addressValidator.validate(this.address)) {
             throw new FailedValidateException();
         }
 
