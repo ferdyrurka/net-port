@@ -28,7 +28,7 @@ public class ScannerService {
      * Scan.
      */
     public LinkedList<String> scan(SocketService socketService) {
-        for (int currentPort = this.startPort; currentPort < this.endPort; currentPort++) {
+        for (int currentPort = this.startPort; currentPort <= this.endPort; currentPort++) {
             if (socketService.scan(currentPort)) {
                 this.resultScanList.add("Port: " + currentPort + " is open!");
                 continue;

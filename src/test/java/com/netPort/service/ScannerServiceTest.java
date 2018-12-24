@@ -19,7 +19,7 @@ public class ScannerServiceTest {
 
     @Test
     public void testScan() {
-        Mockito.when(socketService.scan(Mockito.any(Integer.class))).thenReturn(true, false);
+        Mockito.when(socketService.scan(Mockito.isA(Integer.class))).thenReturn(true, false);
 
         ScannerService scannerService = new ScannerService(10, 11);
         LinkedList<String> result = scannerService.scan(socketService);
@@ -36,5 +36,8 @@ public class ScannerServiceTest {
         }
 
         assertTrue(resultIterator);
+
+        Mockito.verify(socketService).scan(10);
+        Mockito.verify(socketService).scan(11);
     }
 }
